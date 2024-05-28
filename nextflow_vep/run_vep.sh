@@ -4,11 +4,8 @@
 # NXF_PATH="/scratch16/abattle4/surya/tools/nextflow_run/"
 # ${NXF_PATH}/nextflow run vep_finaltest.nf -c vep_finaltest.config
 
-# Nextflow Sample run 
-#nextflow run main.nf
-
-# Nextflow Sample run 
-#nextflow main_chromwise.nf --skip_cache --resultoutdir /scratch16/abattle4/surya/datasets/WatershedAFR/data/annotation --inputvcf gene-GLOBAL-rv.CADD.vcf -profile local -process.echo
+# Nextflow Sample run: example usage 
+# nextflow main_chromwise.nf --skip_cache --resultoutdir /scratch16/abattle4/surya/datasets/WatershedAFR/data/annotation --inputvcf gene-GLOBAL-rv.CADD.vcf -profile local
 
 #*****************************************************************************************************************************************************************************************
 
