@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Nextflow sample run with path defined 
-########################################
-#NXF_PATH="/scratch16/abattle4/surya/tools/nextflow_run/"
-#${NXF_PATH}/nextflow run vep_finaltest.nf -c vep_finaltest.config -process.echo -resume
+# NXF_PATH="/scratch16/abattle4/surya/tools/nextflow_run/"
+# ${NXF_PATH}/nextflow run vep_finaltest.nf -c vep_finaltest.config
 
 # Nextflow Sample run 
 #nextflow run main.nf
@@ -19,6 +18,7 @@
 
 # Population 
 POP=$1
+POP="EUR"
 
 # Load java module
 ml java/19
@@ -33,8 +33,7 @@ vcfchromfileDir="/scratch16/abattle4/surya/datasets/WatershedAFR/data/rare_varia
 nxf_dir="/scratch16/abattle4/surya/datasets/watershed_rarevars/project_final"
 
 # FOR CHROMWISE VEP RUN
-
-# Skips cached buildup
+# Skips cache buildup
 nextflow ${nxf_dir}/main_chromwise_final.nf -c ${nxf_dir}/nextflow.config --skip_cache --resultoutdir $chromwise_outdir --vcfDir $vcfchromfileDir -profile slurm
 
 # Includes Cache buidup
