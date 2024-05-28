@@ -101,7 +101,6 @@ process split_population {
 
 process process_data {
     //cache 'true'
-    debug true
     /*conda "${params.watershed_pyenv}"*/
 
     //tag { "JOB ${params.variable}" }
@@ -134,7 +133,6 @@ process process_data {
 
 process normalize_expression {
     //cache 'true'
-    debug true
     tag { "JOB ${pop}" }
     label 'watershed_r_env'
     publishDir "$params.out_dir/outputs/1_expression/$pop/PEER", mode : 'copy'
@@ -160,7 +158,6 @@ process normalize_expression {
 
 process normalize_expression_global {
     //cache 'true'
-    debug true
     tag { "JOB ${pop}" }
     label 'watershed_r_env'
     publishDir "$params.out_dir/outputs/1_expression/$pop/PEER", mode : 'copy'
@@ -187,7 +184,6 @@ process normalize_expression_global {
 
 process compute_peerfactors {
     //cache 'true'
-    debug true
     tag { "PEER_${pop}" }
     label 'peer_docker_env' // You might need to define this label in your config with appropriate resources
     publishDir "$params.out_dir/outputs/1_expression/$pop/PEER", mode : 'copy'
@@ -211,7 +207,6 @@ process compute_peerfactors {
 
 process compute_expr_residuals {
     //cache 'true'
-    debug true
     tag { "JOB ${pop}" }
     label 'watershed_r_env'
     publishDir "$params.out_dir/outputs/1_expression/$pop/PEER/residuals", mode : 'copy'
@@ -237,7 +232,6 @@ process compute_expr_residuals {
 
 process call_expr_outliers {
     //cache 'true'
-    debug true
     tag { "JOB ${pop}" }
     label 'watershed_r_env'
     publishDir "$params.out_dir/outputs/1_expression/$pop", mode : 'copy'
