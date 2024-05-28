@@ -1,0 +1,10 @@
+name: watershed_pyenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10  # Specifying a compatible version of Python
+  - pandas
+  - numpy
+  - mamba
+
