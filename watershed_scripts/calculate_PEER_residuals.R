@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# @file step2_1_calculate_PEER_residuals
+# @file step2.1_calculate_PEER_residuals
 # @title Calculate PEER Residuals
 # @description This script calculates PEER residuals for gene expression data by performing linear regression, adjusting for covariates and PEER factors, and then outputs the residuals.
 # @param expr_file Path to the log2 transformed z-normalized expression matrix file.
@@ -11,7 +11,7 @@
 # @usage Rscript step2_1_calculate_PEER_residuals.R --expr=LOGZ_EXPR_FILE --cov=COV_FILE --peer=PEER_FILE --out=OUT_FILE --pcs=5
 # @return Outputs a file containing the residuals.
 # @examples 
-# Rscript step2_1_calculate_PEER_residuals.R --expr="Kidney_Cortex.log2.ztrans.txt" --cov="combined_covariates" --peer="factors.tsv" --out="Kidney_Cortex_residuals.txt" --pcs=5
+# Rscript step2.1_calculate_PEER_residuals.R --expr="LCL_Blood.log2.ztrans.txt" --cov="combined_covariates" --peer="factors.tsv" --out="LCL_Blood_*residuals.txt" --pcs=5
 
 library(optparse)
 library(data.table)
