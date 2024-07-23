@@ -139,4 +139,38 @@ This file contains rare variant data in VCF (Variant Call Format), including gen
 1       50000   rs0005  A       C       99.5    PASS    .       GT      0|0     0|0     1|0     1|1
 ```
 
+## Running the Nextflow Pipeline
 
+### Command
+To run the Nextflow pipeline with the correct Conda environment and a specific run name for resuming, use the following command:
+
+```bash
+nextflow run ./main.nf -c nextflow.config \
+  --analysis GLOBAL \
+  --bin_dir "$BIN_DIR" \
+  --cache_dir "$CACHE_DIR" \
+  --watershed_pyenv "$CONDA_PYENV_YML" \
+  --watershed_renv "$CONDA_RENV_YML" \
+  --watershed_caddenv "$CONDA_CADDENV_YML" \
+  --watershed_env "$CONDA_ENV_YML" \
+  --genotype_pcs 5 \
+  --skip_cache \
+  --cachedir_vep "$VEP_CACHEDIR" \
+  --tpm_infile "<path_to_tpm_infile>" \
+ --readcount_infile "<path_to_readcount_infile>" \
+  --covariate_infile "<path_to_covariate_infile>" \
+  --subjids_file "<path_to_subjids_file>" \
+  --rv_file "<path_to_rv_file>" \
+  -profile conda \
+  -resume
+```
+
+### Parameters
+- `--tpm_infile`: Path to the TPM input file.
+- `--readcount_infile`: Path to the read count input file.
+- `--covariate_infile`: Path to the covariate input file.
+- `--subjids_file`: Path to the subject IDs file.
+- `--rv_file`: Path to the rare variant file.
+
+Replace `<path_to_tpm_infile>`, `<path_to_readcount_infile>`, `<path_to_covariate_infile>`, `<path_to_subjids_file>`, and `<path_to_rv_file>` with the actual paths to your respective input files.
+```
