@@ -170,7 +170,7 @@ nextflow run ./main.nf -c nextflow.config \
 - `--readcount_infile`: Path to the read count input file.
 - `--covariate_infile`: Path to the covariate input file.
 - `--subjids_file`: Path to the subject IDs file.
-- `--rv_file`: Path to the vcf file for rare variant file.
+- `--rv_file`: Path to the vcf file for rare variant call.
 
 Replace `<path_to_tpm_infile>`, `<path_to_readcount_infile>`, `<path_to_covariate_infile>`, `<path_to_subjids_file>`, and `<path_to_rv_file>` with the actual paths to your respective input files.
 ```
