@@ -157,7 +157,7 @@ nextflow run ./main.nf -c nextflow.config \
   --skip_cache \
   --cachedir_vep "$VEP_CACHEDIR" \
   --tpm_infile "<path_to_tpm_infile>" \
- --readcount_infile "<path_to_readcount_infile>" \
+  --readcount_infile "<path_to_readcount_infile>" \
   --covariate_infile "<path_to_covariate_infile>" \
   --subjids_file "<path_to_subjids_file>" \
   --rv_file "<path_to_rv_file>" \
