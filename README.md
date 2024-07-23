@@ -146,7 +146,7 @@ To run the Nextflow pipeline with the correct Conda environment and a specific r
 
 ```bash
 nextflow run ./main.nf -c nextflow.config \
-  --analysis GLOBAL \
+  --ancestry GLOBAL \
   --bin_dir "$BIN_DIR" \
   --cache_dir "$CACHE_DIR" \
   --watershed_pyenv "$CONDA_PYENV_YML" \
@@ -161,6 +161,7 @@ nextflow run ./main.nf -c nextflow.config \
   --covariate_infile "<path_to_covariate_infile>" \
   --subjids_file "<path_to_subjids_file>" \
   --rv_file "<path_to_rv_file>" \
+  --tissue "LCL" \
   -profile conda \
   -resume
 ```
