@@ -109,7 +109,7 @@ Sample4  EUR
 Sample5  EUR
 ```
 
-## 5. Rare Variant Call VCF File (`rv_file`)
+## 5. Rare Variant Calling VCF File (`rv_file`)
 
 ### Description
 This file contains variant data in VCF (Variant Call Format) for rare variant calling, including genotypic information for each sample.
