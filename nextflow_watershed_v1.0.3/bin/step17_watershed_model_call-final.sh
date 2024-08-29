@@ -35,8 +35,6 @@ output_prefix="${outputdir}/${outprefix}"
 # RUN WATERSHED EVALUATION
 echo -e "\n\n**** WATERSHED EVALUATION STARTS ****"
 echo -e "\nWatershed evaluation of: $input_file" 
-#Rscript $watershed_codedir/evaluate_watershed.R --input $input_file --number_dimensions $number_of_dim --output_prefix $output_prefix --model_name $model --binary_pvalue_threshold 0.0003521127 --n2_pair_pvalue_fraction 0.002115568
-#echo "Rscript ./evaluate_watershed.R --input $input_file --number_dimensions $number_of_dim --output_prefix $output_prefix --model_name $model --binary_pvalue_threshold 2.535111e-06"
 Rscript ./evaluate_watershed.R --input $input_file --number_dimensions $number_of_dim --output_prefix $output_prefix --model_name $model --binary_pvalue_threshold 0.01
 
 
@@ -50,6 +48,5 @@ Rscript ./evaluate_watershed.R --input $input_file --number_dimensions $number_o
 # RUN WATERSHED PREDICTION
 echo -e "\n\n\n**** WATERSHED PREDICTION STARTS ****"
 echo -e "\nWatershed prediction of: $input_file" 
-#Rscript $watershed_codedir/predict_watershed.R --training_input $input_file --prediction_input $input_file --number_dimensions $number_of_dim --output_prefix $output_prefix --model_name $model --binary_pvalue_threshold 0.0003521127 
 Rscript ./predict_watershed.R --training_input $input_file --prediction_input $input_file --number_dimensions $number_of_dim --output_prefix $output_prefix --model_name $model --binary_pvalue_threshold 0.01
 
