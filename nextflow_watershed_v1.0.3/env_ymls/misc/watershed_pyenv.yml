@@ -1,0 +1,14 @@
+name: watershed_pyenv
+channels:
+  - conda-forge
+  - defaults
+  - bioconda  # Adding the bioconda channel
+  - r  # Adding the r channel
+dependencies:
+  - python=3.10  # Specifying a compatible version of Python
+  - pandas
+  - numpy
+  - mamba
+  - pysam  # Ensuring pysam is installed from the bioconda channel
+
+

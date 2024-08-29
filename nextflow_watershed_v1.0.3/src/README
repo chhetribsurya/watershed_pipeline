@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+conda activate  /scratch16/abattle4/surya/datasets/for_scripts/project_watershed/nextflow_pipe/test-scripts/cache/condacache/watershed_caddenv-04b7856435bdf855f34075bf128f11c6
+
+mkdir -p ./src
+
+cd src
+
+wget https://github.com/kircherlab/CADD-scripts/archive/v1.6.post1.zip
+
+unzip v1.6.post1.zip
+
+cd CADD-scripts-1.6.post1 
+
+# if you are located in the US
+./install.sh
+
+# if you are located in Europe
+./install.sh -b
+
+# Choose all "no" prompts except "yes" for Choose model for GRCh38 option
+
+# Create soft link for prescored annotations as it's a bulky file:
+# Go to data directory and then create sym link within the dir
+cd data
+
+ln -s /scratch16/abattle4/surya/tools/CADD-scripts/data/annotations/ .
+
+# Prescored variants not required for the current cadd run
+# only annotations and model folder required
+
+#Sanity check run: 
+./CADD.sh test/input.vcf

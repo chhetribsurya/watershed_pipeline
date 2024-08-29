@@ -1,0 +1,10 @@
+name: watershed_modelenv-test
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=3.5.1
+  - r-rcpp=1.0.2
+  - r-lbfgs=1.2.1
+  - r-prroc=1.3.1
+  - r-optparse=1.6.4

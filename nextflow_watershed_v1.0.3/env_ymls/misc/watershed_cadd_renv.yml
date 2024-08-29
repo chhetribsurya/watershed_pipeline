@@ -1,0 +1,14 @@
+name: watershed_cadd_renv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - r-base=4.1.1
+  - r-data.table
+  - r-stringr
+  - r-optparse
+  - r-plyr
+  - r-dplyr
+  - r-tidyr
+  - r-r.utils
+

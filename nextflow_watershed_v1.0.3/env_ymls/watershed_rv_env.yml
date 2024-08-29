@@ -1,0 +1,10 @@
+name: watershed_rv_env
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bcftools=1.9
+  - parallel=20170422
+  - bedtools=2.31.1
+  - r-base=3.6.2

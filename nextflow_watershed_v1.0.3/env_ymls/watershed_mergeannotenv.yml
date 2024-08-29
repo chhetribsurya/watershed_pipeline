@@ -1,0 +1,11 @@
+name: watershed_mergeannotenv
+channels:
+  - conda-forge
+  - defaults
+  - bioconda  # Adding the bioconda channel
+dependencies:
+  - python=3.10  # Specifying a compatible version of Python
+  - pandas
+  - numpy
+  - mamba
+  - scikit-learn
