@@ -1,31 +1,7 @@
 #!/usr/bin/env Rscript
 
-# COLLAPSE KGPEx rare-variant anno Number and AF
-
-## Collapse GTEx annotations to gene-individual pair level
-## The annotations and their transformations across multiple rare variants
-## - af (min)
-## - num_rare_variants (sum)
-
-## TODO
-## - donor_ss (max)
-## - acceptor_ss (max)
-## - ppt_region (max)
-## - donor_ss_window (max)
-## - acceptor_ss_winow (max)
-
 library(data.table)
 library(dplyr)
-
-#rv.file = '/scratch16/abattle4/surya/datasets/WatershedAFR/data/rare_variants_gnomad/gene-GLOBAL-rv.txt'
-
-# save gene-level annotation file to dir:
-#genelevel_dir="/scratch16/abattle4/surya/datasets/WatershedAFR/data/annotation/annotation_inputFinal/genelevel_output"
-#dir.create(genelevel_dir, recursive = TRUE, showWarnings = FALSE)
-
-# save variant-level annotation file to dir:
-#variantlevel_dir="/scratch16/abattle4/surya/datasets/WatershedAFR/data/annotation/annotation_inputFinal/variantlevel_output"
-#dir.create(variantlevel_dir, recursive = TRUE, showWarnings = FALSE)
 
 args <- commandArgs(trailingOnly = TRUE)
 
@@ -35,8 +11,6 @@ outfile2 <- args[3]
 genelevel_dir <- args[4]
 variantlevel_dir <- args[5]
 
-#phylop.file <- args[6]
-#pop <- args[7]
 
 # Create directories
 dir.create(variantlevel_dir, recursive = TRUE, showWarnings = FALSE)
