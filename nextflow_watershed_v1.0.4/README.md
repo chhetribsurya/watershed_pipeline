@@ -287,20 +287,20 @@ nextflow run ./main.nf -c nextflow.config \
   --cohort_name gtexEUR \
   --ancestry EUR \
   --outlier_method "pvalue" \
-  --bin_dir "$BIN_DIR" \
-  --cache_dir "$CACHE_DIR" \
-  --watershed_pyenv "$CONDA_PYENV_YML" \
-  --watershed_renv "$CONDA_RENV_YML" \
-  --watershed_caddenv "$CONDA_CADDENV_YML" \
-  --watershed_env "$CONDA_ENV_YML" \
+  --bin_dir "./bin" \
+  --cache_dir "./cache" \
+  --watershed_pyenv "env_ymls/watershed_pyenv.yml" \
+  --watershed_renv "env_ymls/watershed_renv.yml" \
+  --watershed_caddenv "env_ymls/watershed_caddenv.yml" \
+  --watershed_env "env_ymls/watershed_env.yml" \
   --genotype_pcs 5 \
   --skip_cache \
   --cachedir_vep "$VEP_CACHEDIR" \
-  --tpm_infile "data/gtex_input/tpm_Adipose-Subcutaneous.tab" \
-  --readcount_infile "data/gtex_input/read_count_Adipose-Subcutaneous.tab" \
-  --covariate_infile "data/gtex_input/covariates_Adipose-Subcutaneous.tab" \
-  --subjids_file "data/gtex_input/subjids_Adipose-Subcutaneous_EUR.txt" \
-  --rv_file "data/gtex_input/Adipose-Subcutaneous.vcf.gz" \
+  --tpm_infile "<path_to_tpm_file>" \
+  --readcount_infile "<path_to_readcount_file>" \
+  --covariate_infile "<path_to_covariate_file>" \
+  --subjids_file "<path_to_subjids_file>" \
+  --rv_file "<path_to_rv_file>" \
   --tissue "Adipose" \
   --enrichment_method "both" \
   --aupr_plots "true" \
@@ -381,13 +381,8 @@ The pipeline provides flexible options for both outlier detection and enrichment
 - `"pvalue"`: Uses p-values to identify expression outliers
 - `"zscore"`: Uses z-scores to identify expression outliers
 
-**Implementation Details:**
-The pipeline conditionally selects different scripts based on the chosen method:
-```bash
-def bash_script = params.outlier_method == "zscore" 
-    ? "${launchDir}/bin/step17_watershed_model_call-final-zscoreversion.sh"
-    : "${launchDir}/bin/step17_watershed_model_call-final-test.sh"
-```
+**Description:**
+The pipeline automatically selects the appropriate script based on the chosen outlier detection method.
 
 ### Enrichment Analysis Methods (`--enrichment_method`)
 
@@ -395,21 +390,16 @@ def bash_script = params.outlier_method == "zscore"
 - `"zscore"`: Uses z-score based enrichment analysis
 - `"both"`: Runs both p-value and z-score based enrichment analyses
 
-**Implementation Details:**
-The pipeline uses different R scripts based on the method:
-```bash
-def r_script_pval = "${launchDir}/bin/step7_rare_var_enrichment-pval.R"
-def r_script_zscore = "${launchDir}/bin/step7_rare_var_enrichment.R"
-```
+**Description:**
+The pipeline uses different R scripts based on the method.
 
 ### AUPR Analysis (`--aupr_plots`)
 
 - `"true"`: Generates Area Under Precision-Recall (AUPR) plots
 - `"false"`: Skips AUPR plot generation
 
-**Implementation Details:**
-- The AUPR analysis is performed using `step18_watershed_aupr.R`
-- Provides comprehensive model evaluation through:
+**Description:**
+- The AUPR analysis provides comprehensive model evaluation through:
   - Precision-recall curves
   - Area under curve calculations
   - Model performance metrics
