@@ -1,0 +1,13 @@
+name: watershed_vepenv
+channels:
+  - conda-forge
+  - defaults
+  - bioconda  # Adding the bioconda channel
+  - r  # Adding the r channel
+dependencies:
+  - python=3.10  # Specifying a compatible version of Python
+  - pandas=1.5.3  # Specify a compatible version of pandas
+  - numpy=1.26.4  # Specify a compatible version of numpy
+  - mamba=1.2.0
+  - pysam=0.21.0 # Ensuring pysam is installed from the bioconda channel
+  - htslib=1.6  # Includes bgzip and tabix

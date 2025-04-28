@@ -1,0 +1,13 @@
+name: watershed_annotenv
+channels:
+  - conda-forge
+  - defaults
+  - bioconda  # Adding the bioconda channel
+  - r  # Adding the r channel
+dependencies:
+  - python=3.9  # Using Python 3.9 for compatibility
+  - pandas
+  - numpy
+  - mamba
+  - pysam  # Ensuring pysam is installed from the bioconda channel
+
