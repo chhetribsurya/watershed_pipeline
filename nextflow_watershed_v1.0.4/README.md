@@ -35,6 +35,7 @@ This file contains Transcripts Per Million (TPM) data from RNAseq processing. Th
 - **Columns:**
   - The first column should contain Ensembl gene IDs.
   - Subsequent columns should contain TPM values for each sample.
+  - **Note:** The second column is not mandatory and can be used for additional gene information if needed.
 
 **Example:**
 
@@ -63,6 +64,7 @@ This file contains read count data from RNAseq processing, providing raw counts 
 - **Columns:**
   - The first column should contain Ensembl gene IDs.
   - Subsequent columns should contain read count values for each sample.
+  - **Note:** The second column is not mandatory and can be used for additional gene information if needed.
 
 **Example:**
 
@@ -91,6 +93,7 @@ This file contains covariate data such as sex, principal components (PCs), and o
 - **Columns:**
   - The first column should contain covariate IDs.
   - Subsequent columns should contain covariate values for each sample.
+  - **Note:** The second column is not mandatory and can be used for additional covariate information if needed.
 
 **Example:**
 
@@ -122,7 +125,7 @@ This file contains the subject IDs along with their population ancestry.
 - **File Type:** Text file (.txt)
 - **Columns:**
   - The first column should contain subject IDs.
-  - The second column should contain a single population ancestry (e.g., EUR, AFR, EAS, SAS, GLOBAL).
+  - The second column may contain a single population ancestry (e.g., EUR, AFR, EAS, SAS, GLOBAL).
 
 **Example:**
 
